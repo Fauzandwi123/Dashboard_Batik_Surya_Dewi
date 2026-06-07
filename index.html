@@ -1417,6 +1417,85 @@
       transform: translateY(-2px);
     }
 
+    /* ─── QRIS Modal ─── */
+
+    .qris-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      width: 420px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 2003;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .qris-modal.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .qris-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .qris-modal .modal-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .qris-wrapper {
+      background: var(--white);
+      border: 2px dashed var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .qris-wrapper img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .qris-total {
+      margin-bottom: 12px;
+    }
+
+    .qris-total span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .qris-total strong {
+      font-size: 1.6rem;
+      color: var(--brown);
+    }
+
+    .qris-hint {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
     .btn-cancel {
       background: var(--cream-dark);
       color: var(--text);
@@ -1727,6 +1806,7 @@
 
     .product-carousel {
       position: relative;
+      z-index: 1;
       overflow: hidden;
     }
 
@@ -1742,6 +1822,10 @@
     }
 
     .new-arrivals .product-carousel-slide {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .wanita .product-carousel-slide {
       grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1804,6 +1888,30 @@
         margin-top: 1.5rem;
       }
     }
+
+    .wanita {
+      padding: 100px 0;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .wanita::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L35 25H55L38 37L45 58L30 46L15 58L22 37L5 25H25Z' fill='%236B3A2A'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .wanita .product-carousel-nav .carousel-dot {
+      background: rgba(62, 39, 35, 0.25);
+    }
+
+    .wanita .product-carousel-nav .carousel-dot.active {
+      background: var(--gold);
+    }
   </style>
 </head>
 
@@ -1818,7 +1926,9 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#home">Beranda</a>
+        <a href="#new-arrivals">Koleksi Terbaru</a>
         <a href="#types">Produk</a>
+        <a href="#wanita">Koleksi Wanita</a>
         <a href="#gallery">Galeri</a>
         <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
@@ -2097,6 +2207,209 @@
           <button class="carousel-btn" data-carousel="newArrivals" data-dir="prev" aria-label="Sebelumnya">‹</button>
           <div class="carousel-controls" id="newArrivalsDots"></div>
           <button class="carousel-btn" data-carousel="newArrivals" data-dir="next" aria-label="Berikutnya">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ KOLEKSI WANITA ═══════════ -->
+  <section class="wanita" id="wanita">
+    <div class="container">
+      <h2 class="section-title fade-in">Koleksi Wanita</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle fade-in">Koleksi batik modern khusus untuk wanita, gaya dan elegan</p>
+
+      <div class="product-carousel" data-carousel="wanita">
+        <div class="product-carousel-track" id="wanitaTrack">
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="wanita-1" data-name="Dress Batik Wanita Floral"
+              data-price="350000" data-image="images/wanita-1.jpg">
+              <span class="product-badge">Best Seller</span>
+              <div class="card-img">
+                <img src="images/wanita-1.jpg" alt="Dress Batik Wanita Floral" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Wanita Floral</h4>
+                <p class="type-label">Dress Batik</p>
+                <p class="price">Rp 350.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-2" data-name="Kebaya Batik Modern" data-price="425000"
+              data-image="images/wanita-2.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/wanita-2.jpg" alt="Kebaya Batik Modern" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kebaya Batik Modern</h4>
+                <p class="type-label">Kebaya</p>
+                <p class="price">Rp 425.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-3" data-name="Blouse Batik Printing" data-price="185000"
+              data-image="images/wanita-3.jpg">
+              <div class="card-img">
+                <img src="images/wanita-3.jpg" alt="Blouse Batik Printing" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Blouse Batik Printing</h4>
+                <p class="type-label">Blouse</p>
+                <p class="price">Rp 185.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-4" data-name="Dress Batik Maxi" data-price="295000"
+              data-image="images/wanita-4.jpg">
+              <div class="card-img">
+                <img src="images/wanita-4.jpg" alt="Dress Batik Maxi" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Maxi</h4>
+                <p class="type-label">Dress Batik</p>
+                <p class="price">Rp 295.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="wanita-5" data-name="Tunik Batik Elegan" data-price="265000"
+              data-image="images/wanita-5.jpg">
+              <div class="card-img">
+                <img src="images/wanita-5.jpg" alt="Tunik Batik Elegan" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Tunik Batik Elegan</h4>
+                <p class="type-label">Tunik</p>
+                <p class="price">Rp 265.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-6" data-name="Gamis Batik Kombinasi" data-price="385000"
+              data-image="images/wanita-6.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/wanita-6.jpg" alt="Gamis Batik Kombinasi" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Gamis Batik Kombinasi</h4>
+                <p class="type-label">Gamis</p>
+                <p class="price">Rp 385.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-7" data-name="Kardigan Batik Wanita" data-price="225000"
+              data-image="images/wanita-7.jpg">
+              <div class="card-img">
+                <img src="images/wanita-7.jpg" alt="Kardigan Batik Wanita" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kardigan Batik Wanita</h4>
+                <p class="type-label">Kardigan</p>
+                <p class="price">Rp 225.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-8" data-name="Dress Batik Brokat" data-price="455000"
+              data-image="images/wanita-8.jpg">
+              <span class="product-badge">Premium</span>
+              <div class="card-img">
+                <img src="images/wanita-8.jpg" alt="Dress Batik Brokat" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Brokat</h4>
+                <p class="type-label">Dress Batik</p>
+                <p class="price">Rp 455.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-carousel-nav">
+          <button class="carousel-btn" data-carousel="wanita" data-dir="prev" aria-label="Sebelumnya">‹</button>
+          <div class="carousel-controls" id="wanitaDots"></div>
+          <button class="carousel-btn" data-carousel="wanita" data-dir="next" aria-label="Berikutnya">›</button>
         </div>
       </div>
     </div>
@@ -2552,6 +2865,25 @@
     </form>
   </div>
 
+  <!-- ═══════════ QRIS PAYMENT MODAL ═══════════ -->
+  <div class="qris-modal" id="qrisModal">
+    <h3>Pembayaran QRIS</h3>
+    <p class="modal-subtitle">Scan QR code di bawah untuk melakukan pembayaran</p>
+    <div class="qris-wrapper">
+      <img src="images/qris.jpg" alt="QRIS Payment">
+    </div>
+    <div class="qris-total">
+      <span>Total Pembayaran</span>
+      <strong id="qrisTotal">Rp 0</strong>
+    </div>
+    <p class="qris-hint">Setelah pembayaran berhasil, klik tombol "Sudah Bayar" untuk mengirimkan konfirmasi pesanan via
+      WhatsApp</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-cancel" id="qrisCancel">Batal</button>
+      <button type="button" class="btn btn-wa" id="qrisConfirm">✅ Sudah Bayar</button>
+    </div>
+  </div>
+
   <!-- ═══════════ SIZE ANALYZER MODAL ═══════════ -->
   <div class="size-modal" id="sizeModal">
     <h3>Analisis Ukuran Baju</h3>
@@ -2762,6 +3094,10 @@
     const sizeResultValue = document.getElementById('sizeResultValue');
     const sizeResultDesc = document.getElementById('sizeResultDesc');
     const sizeModalCancel = document.getElementById('sizeModalCancel');
+    const qrisModal = document.getElementById('qrisModal');
+    const qrisTotal = document.getElementById('qrisTotal');
+    const qrisCancel = document.getElementById('qrisCancel');
+    const qrisConfirm = document.getElementById('qrisConfirm');
 
     // ─── Cart Functions ───
     function addToCart(id, name, price, image, size) {
@@ -2879,7 +3215,21 @@
 
     function closeCheckoutModal() {
       checkoutModal.classList.remove('open');
-      if (!cartSidebar.classList.contains('open')) {
+      if (!cartSidebar.classList.contains('open') && !qrisModal.classList.contains('open')) {
+        overlay.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      }
+    }
+
+    function openQrisModal() {
+      qrisModal.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeQrisModal() {
+      qrisModal.classList.remove('open');
+      if (!cartSidebar.classList.contains('open') && !checkoutModal.classList.contains('open')) {
         overlay.classList.remove('open');
         document.body.classList.remove('no-scroll');
       }
@@ -2919,6 +3269,7 @@
       closeCart();
       closeCheckoutModal();
       closeSizeModal();
+      closeQrisModal();
     });
 
     // ─── Checkout ───
@@ -2929,6 +3280,8 @@
     });
 
     modalCancel.addEventListener('click', closeCheckoutModal);
+
+    var checkoutData = null;
 
     checkoutForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -2942,25 +3295,41 @@
         return;
       }
 
-      var msg = '*Pesanan BATIK SURYA DEWI*\n\n';
+      checkoutData = { name: name, phone: phone, address: address, notes: notes };
+      qrisTotal.textContent = formatPrice(getTotal());
+      closeCheckoutModal();
+      setTimeout(openQrisModal, 350);
+    });
+
+    qrisCancel.addEventListener('click', function () {
+      closeQrisModal();
+      setTimeout(openCheckoutModal, 350);
+    });
+
+    qrisConfirm.addEventListener('click', function () {
+      if (!checkoutData) return;
+
+      var msg = '✓ *Pembayaran QRIS*\n\n';
+      msg += '*Pesanan BATIK SURYA DEWI*\n\n';
       msg += '*Item Pesanan:*\n';
       cart.forEach(function (item) {
         msg += item.name + ' (' + item.size + ') - ' + item.qty + 'x = ' + formatPrice(item.price * item.qty) + '\n';
       });
       msg += '\n*Total: ' + formatPrice(getTotal()) + '*\n\n';
       msg += '*Data Pemesan:*\n';
-      msg += 'Nama: ' + name + '\n';
-      msg += 'No. Telp: ' + phone + '\n';
-      msg += 'Alamat: ' + address + '\n';
-      if (notes) msg += 'Catatan: ' + notes + '\n';
+      msg += 'Nama: ' + checkoutData.name + '\n';
+      msg += 'No. Telp: ' + checkoutData.phone + '\n';
+      msg += 'Alamat: ' + checkoutData.address + '\n';
+      if (checkoutData.notes) msg += 'Catatan: ' + checkoutData.notes + '\n';
 
       var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
       window.open(url, '_blank');
 
       cart = [];
       renderCart();
-      closeCheckoutModal();
+      closeQrisModal();
       checkoutForm.reset();
+      checkoutData = null;
       showToast('Pesanan dikirim! Kami akan menghubungi Anda');
     });
 
@@ -3119,6 +3488,7 @@
 
     initProductCarousel('newArrivals');
     initProductCarousel('gallery');
+    initProductCarousel('wanita');
   </script>
 
 </body>
