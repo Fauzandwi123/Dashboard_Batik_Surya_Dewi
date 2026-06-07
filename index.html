@@ -1421,6 +1421,194 @@
       .cart-sidebar { width: 100%; max-width: 100vw; }
       .toast { font-size: 0.8rem; padding: 12px 20px; white-space: normal; }
     }
+
+    /* ─── Size Selector ─── */
+
+    .size-selector {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .size-select {
+      flex: 1;
+      padding: 6px 10px;
+      border: 2px solid var(--cream-dark);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      background: var(--cream);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A3728'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+
+    .size-select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+    }
+
+    .gallery-overlay .size-selector {
+      justify-content: center;
+    }
+
+    .gallery-overlay .size-select {
+      background-color: rgba(255,255,255,0.9);
+      border-color: rgba(255,255,255,0.3);
+      font-size: 0.78rem;
+      padding: 5px 28px 5px 10px;
+    }
+
+    .gallery-overlay .size-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.25);
+    }
+
+    /* ─── Size Float Button ─── */
+
+    .size-float-btn {
+      position: fixed;
+      bottom: 92px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--indigo);
+      color: var(--white);
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(27, 58, 92, 0.4);
+      transition: var(--transition);
+      z-index: 998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    .size-float-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .size-float-btn:hover {
+      background: var(--indigo-light);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(27, 58, 92, 0.5);
+    }
+
+    /* ─── Size Modal ─── */
+
+    .size-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      width: 420px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 2002;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .size-modal.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .size-modal h3 {
+      font-size: 1.4rem;
+      color: var(--indigo);
+      margin-bottom: 4px;
+    }
+
+    .size-modal .modal-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .size-modal .form-group { margin-bottom: 16px; }
+
+    .size-modal .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .size-modal .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--cream-dark);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    .size-modal .form-group input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+    }
+
+    .size-result {
+      text-align: center;
+      padding: 20px;
+      background: var(--cream);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+    }
+
+    .size-result-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .size-result-label { font-size: 0.85rem; color: var(--text-light); margin-bottom: 4px; }
+
+    .size-result-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--indigo);
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    .size-result-desc { font-size: 0.82rem; color: var(--text-light); margin-top: 4px; }
+    .size-modal .modal-actions { display: flex; gap: 12px; margin-top: 8px; }
+    .size-modal .modal-actions .btn { flex: 1; text-align: center; }
+
+    @media (max-width: 640px) {
+      .size-modal { padding: 24px; }
+      .size-float-btn {
+        bottom: 82px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1524,6 +1712,16 @@
             <h4>Kemeja Batik Tulis Parang</h4>
             <p class="type-label">Batik Tulis</p>
             <p class="price">Rp 450.000</p>
+            <div class="size-selector">
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="XXXL">XXXL</option>
+              </select>
+            </div>
             <button class="btn-add-cart">+ Beli</button>
           </div>
         </div>
@@ -1537,6 +1735,16 @@
             <h4>Batik Cap Motif Kawung</h4>
             <p class="type-label">Batik Cap</p>
             <p class="price">Rp 275.000</p>
+            <div class="size-selector">
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="XXXL">XXXL</option>
+              </select>
+            </div>
             <button class="btn-add-cart">+ Beli</button>
           </div>
         </div>
@@ -1550,6 +1758,16 @@
             <h4>Dress Batik Printing Modern</h4>
             <p class="type-label">Batik Printing</p>
             <p class="price">Rp 185.000</p>
+            <div class="size-selector">
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="XXXL">XXXL</option>
+              </select>
+            </div>
             <button class="btn-add-cart">+ Beli</button>
           </div>
         </div>
@@ -1563,6 +1781,16 @@
             <h4>Kemeja Batik Couple</h4>
             <p class="type-label">Batik Tulis &amp; Cap</p>
             <p class="price">Rp 520.000</p>
+            <div class="size-selector">
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="XXXL">XXXL</option>
+              </select>
+            </div>
             <button class="btn-add-cart">+ Beli</button>
           </div>
         </div>
@@ -1583,6 +1811,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Tulis Mega Mendung</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-1">+ Beli</button>
             </div>
           </div>
@@ -1592,6 +1830,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Cap Sidomukti</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-2">+ Beli</button>
             </div>
           </div>
@@ -1601,6 +1849,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Printing Floral</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-3">+ Beli</button>
             </div>
           </div>
@@ -1610,6 +1868,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Tulis Sekar Jagad</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-4">+ Beli</button>
             </div>
           </div>
@@ -1619,6 +1887,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Cap Parang Kusumo</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-5">+ Beli</button>
             </div>
           </div>
@@ -1628,6 +1906,16 @@
           <div class="gallery-overlay">
             <div>
               <h4>Batik Modern Abstract</h4>
+              <div class="size-selector">
+                <select class="size-select">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
               <button class="gallery-add-btn" data-id="gal-6">+ Beli</button>
             </div>
           </div>
@@ -1813,6 +2101,32 @@
     </form>
   </div>
 
+  <!-- ═══════════ SIZE ANALYZER MODAL ═══════════ -->
+  <div class="size-modal" id="sizeModal">
+    <h3>Analisis Ukuran Baju</h3>
+    <p class="modal-subtitle">Masukkan tinggi dan berat badan Anda untuk mendapatkan rekomendasi ukuran</p>
+    <form id="sizeForm">
+      <div class="form-group">
+        <label for="heightInput">Tinggi Badan (cm)</label>
+        <input type="number" id="heightInput" min="100" max="250" placeholder="Contoh: 170" required>
+      </div>
+      <div class="form-group">
+        <label for="weightInput">Berat Badan (kg)</label>
+        <input type="number" id="weightInput" min="20" max="200" placeholder="Contoh: 65" required>
+      </div>
+      <div id="sizeResult" class="size-result" style="display:none;">
+        <div class="size-result-icon">📏</div>
+        <p class="size-result-label">Rekomendasi Ukuran Anda:</p>
+        <p class="size-result-value" id="sizeResultValue">M</p>
+        <p class="size-result-desc" id="sizeResultDesc">Ukuran ini cocok untuk tinggi dan berat badan Anda</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-cancel" id="sizeModalCancel">Batal</button>
+        <button type="submit" class="btn btn-primary">Analisis Ukuran</button>
+      </div>
+    </form>
+  </div>
+
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="footer">
     <div class="container">
@@ -1835,6 +2149,9 @@
 
   <!-- ═══════════ BACK TO TOP ═══════════ -->
   <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <!-- ═══════════ SIZE ANALYZER FLOATING BUTTON ═══════════ -->
+  <button class="size-float-btn" id="sizeFloatBtn" aria-label="Analisis Ukuran Baju">📏</button>
 
   <!-- ═══════════ JAVASCRIPT ═══════════ -->
   <script>
@@ -1985,30 +2302,40 @@
     const checkoutModal = document.getElementById('checkoutModal');
     const checkoutForm = document.getElementById('checkoutForm');
     const modalCancel = document.getElementById('modalCancel');
+    const sizeFloatBtn = document.getElementById('sizeFloatBtn');
+    const sizeModal = document.getElementById('sizeModal');
+    const sizeForm = document.getElementById('sizeForm');
+    const heightInput = document.getElementById('heightInput');
+    const weightInput = document.getElementById('weightInput');
+    const sizeResult = document.getElementById('sizeResult');
+    const sizeResultValue = document.getElementById('sizeResultValue');
+    const sizeResultDesc = document.getElementById('sizeResultDesc');
+    const sizeModalCancel = document.getElementById('sizeModalCancel');
 
     // ─── Cart Functions ───
-    function addToCart(id, name, price, image) {
-      var existing = cart.find(function(item) { return item.id === id; });
+    function addToCart(id, name, price, image, size) {
+      var key = id + '|' + size;
+      var existing = cart.find(function(item) { return item.key === key; });
       if (existing) {
         existing.qty += 1;
       } else {
-        cart.push({ id: id, name: name, price: price, image: image, qty: 1 });
+        cart.push({ key: key, id: id, name: name, price: price, image: image, size: size, qty: 1 });
       }
       renderCart();
-      showToast(name + ' ditambahkan ke keranjang');
+      showToast(name + ' (' + size + ') ditambahkan ke keranjang');
     }
 
-    function removeFromCart(id) {
-      cart = cart.filter(function(item) { return item.id !== id; });
+    function removeFromCart(key) {
+      cart = cart.filter(function(item) { return item.key !== key; });
       renderCart();
     }
 
-    function updateQty(id, delta) {
-      var item = cart.find(function(item) { return item.id === id; });
+    function updateQty(key, delta) {
+      var item = cart.find(function(item) { return item.key === key; });
       if (!item) return;
       item.qty += delta;
       if (item.qty <= 0) {
-        removeFromCart(id);
+        removeFromCart(key);
       } else {
         renderCart();
       }
@@ -2025,7 +2352,6 @@
     }
 
     function renderCart() {
-      // Badge
       var count = 0;
       cart.forEach(function(item) { count += item.qty; });
       if (count > 0) {
@@ -2035,7 +2361,6 @@
         cartBadge.classList.remove('visible');
       }
 
-      // Items
       if (cart.length === 0) {
         cartItems.innerHTML = '<div class="cart-empty"><div class="empty-icon">🛒</div><p>Belum ada produk di keranjang</p></div>';
         cartFooter.style.display = 'none';
@@ -2052,14 +2377,15 @@
             '<div class="cart-item-info">' +
               '<h4>' + item.name + '</h4>' +
               '<div class="item-price">' + formatPrice(item.price) + '</div>' +
+              '<div style="font-size:0.78rem;color:var(--text-light);margin-top:2px;">Ukuran: ' + item.size + '</div>' +
               '<div class="cart-item-qty">' +
-                '<button class="qty-btn" onclick="updateQty(\'' + item.id + '\', -1)">−</button>' +
+                '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', -1)">−</button>' +
                 '<span>' + item.qty + '</span>' +
-                '<button class="qty-btn" onclick="updateQty(\'' + item.id + '\', 1)">+</button>' +
+                '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', 1)">+</button>' +
               '</div>' +
             '</div>' +
             '<div class="cart-item-subtotal">' + formatPrice(subtotal) + '</div>' +
-            '<button class="cart-item-remove" onclick="removeFromCart(\'' + item.id + '\')" aria-label="Hapus">✕</button>' +
+            '<button class="cart-item-remove" onclick="removeFromCart(\'' + item.key + '\')" aria-label="Hapus">✕</button>' +
           '</div>';
       });
       cartItems.innerHTML = html;
@@ -2117,7 +2443,8 @@
         var name = card.dataset.name;
         var price = parseInt(card.dataset.price);
         var image = card.dataset.image;
-        addToCart(id, name, price, image);
+        var size = card.querySelector('.size-select').value;
+        addToCart(id, name, price, image, size);
       });
     });
 
@@ -2129,7 +2456,8 @@
         var name = item.dataset.name;
         var price = parseInt(item.dataset.price);
         var image = item.dataset.image;
-        addToCart(id, name, price, image);
+        var size = item.querySelector('.size-select').value;
+        addToCart(id, name, price, image, size);
       });
     });
 
@@ -2139,6 +2467,7 @@
     overlay.addEventListener('click', function() {
       closeCart();
       closeCheckoutModal();
+      closeSizeModal();
     });
 
     // ─── Checkout ───
@@ -2165,7 +2494,7 @@
       var msg = '*Pesanan BATIK SURYA DEWI*\n\n';
       msg += '*Item Pesanan:*\n';
       cart.forEach(function(item) {
-        msg += item.name + ' (' + item.qty + 'x) = ' + formatPrice(item.price * item.qty) + '\n';
+        msg += item.name + ' (' + item.size + ') - ' + item.qty + 'x = ' + formatPrice(item.price * item.qty) + '\n';
       });
       msg += '\n*Total: ' + formatPrice(getTotal()) + '*\n\n';
       msg += '*Data Pemesan:*\n';
@@ -2182,6 +2511,104 @@
       closeCheckoutModal();
       checkoutForm.reset();
       showToast('Pesanan dikirim! Kami akan menghubungi Anda');
+    });
+
+    // ─── Size Analyzer ───
+    function recommendSize(height, weight) {
+      if (height < 150) {
+        if (weight < 45) return 'S';
+        if (weight < 55) return 'M';
+        if (weight < 65) return 'L';
+        return 'XL';
+      }
+      if (height < 160) {
+        if (weight < 50) return 'S';
+        if (weight < 60) return 'M';
+        if (weight < 70) return 'L';
+        if (weight < 80) return 'XL';
+        return 'XXL';
+      }
+      if (height < 170) {
+        if (weight < 55) return 'S';
+        if (weight < 65) return 'M';
+        if (weight < 75) return 'L';
+        if (weight < 85) return 'XL';
+        if (weight < 95) return 'XXL';
+        return 'XXXL';
+      }
+      if (height < 180) {
+        if (weight < 60) return 'S';
+        if (weight < 70) return 'M';
+        if (weight < 80) return 'L';
+        if (weight < 90) return 'XL';
+        if (weight < 100) return 'XXL';
+        return 'XXXL';
+      }
+      if (height < 190) {
+        if (weight < 65) return 'M';
+        if (weight < 75) return 'L';
+        if (weight < 85) return 'XL';
+        if (weight < 100) return 'XXL';
+        return 'XXXL';
+      }
+      if (weight < 70) return 'L';
+      if (weight < 85) return 'XL';
+      if (weight < 100) return 'XXL';
+      return 'XXXL';
+    }
+
+    function openSizeModal() {
+      sizeModal.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('no-scroll');
+      heightInput.focus();
+    }
+
+    function closeSizeModal() {
+      sizeModal.classList.remove('open');
+      if (!cartSidebar.classList.contains('open') && !checkoutModal.classList.contains('open')) {
+        overlay.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      }
+      sizeForm.reset();
+      sizeResult.style.display = 'none';
+    }
+
+    sizeFloatBtn.addEventListener('click', openSizeModal);
+    sizeModalCancel.addEventListener('click', closeSizeModal);
+
+    sizeForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var height = parseInt(heightInput.value);
+      var weight = parseInt(weightInput.value);
+
+      if (!height || !weight || height < 100 || height > 250 || weight < 20 || weight > 200) {
+        showToast('Masukkan tinggi (100-250 cm) dan berat (20-200 kg) yang valid');
+        return;
+      }
+
+      var size = recommendSize(height, weight);
+      sizeResultValue.textContent = size;
+
+      var desc = '';
+      if (size === 'S') desc = 'Cocok untuk tubuh ramping dan tinggi di bawah rata-rata';
+      else if (size === 'M') desc = 'Ukuran standar yang pas untuk tinggi dan berat badan Anda';
+      else if (size === 'L') desc = 'Cocok untuk tubuh sedang hingga berisi';
+      else if (size === 'XL') desc = 'Ukuran longgar untuk tubuh besar atau tinggi';
+      else if (size === 'XXL') desc = 'Ukuran ekstra besar untuk kenyamanan maksimal';
+      else if (size === 'XXXL') desc = 'Ukuran paling besar untuk postur tubuh tinggi dan berat';
+
+      sizeResultDesc.textContent = desc;
+      sizeResult.style.display = 'block';
+    });
+
+    // ─── Size Float Button Visibility ───
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 600) {
+        sizeFloatBtn.classList.add('visible');
+      } else {
+        sizeFloatBtn.classList.remove('visible');
+      }
     });
   </script>
 
