@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BATIK SURYA DEWI - Batik adalah Baju Khas Jogja</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     *,
     *::before,
@@ -1027,7 +1030,9 @@
 
     /* ─── Cart & Checkout ─── */
 
-    body.no-scroll { overflow: hidden; }
+    body.no-scroll {
+      overflow: hidden;
+    }
 
     .cart-trigger {
       position: relative;
@@ -1041,7 +1046,9 @@
       line-height: 1;
     }
 
-    .cart-trigger:hover { color: var(--gold); }
+    .cart-trigger:hover {
+      color: var(--gold);
+    }
 
     .cart-badge {
       position: absolute;
@@ -1062,19 +1069,24 @@
       transform: scale(0);
     }
 
-    .cart-badge.visible { transform: scale(1); }
+    .cart-badge.visible {
+      transform: scale(1);
+    }
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 2000;
       opacity: 0;
       visibility: hidden;
       transition: var(--transition);
     }
 
-    .overlay.open { opacity: 1; visibility: visible; }
+    .overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
 
     .cart-sidebar {
       position: fixed;
@@ -1089,10 +1101,12 @@
       flex-direction: column;
       transform: translateX(100%);
       transition: transform 0.35s ease;
-      box-shadow: -4px 0 30px rgba(0,0,0,0.15);
+      box-shadow: -4px 0 30px rgba(0, 0, 0, 0.15);
     }
 
-    .cart-sidebar.open { transform: translateX(0); }
+    .cart-sidebar.open {
+      transform: translateX(0);
+    }
 
     .cart-sidebar-header {
       display: flex;
@@ -1123,7 +1137,10 @@
       border-radius: 50%;
     }
 
-    .cart-close:hover { background: var(--cream-dark); color: var(--dark); }
+    .cart-close:hover {
+      background: var(--cream-dark);
+      color: var(--dark);
+    }
 
     .cart-items {
       flex: 1;
@@ -1137,8 +1154,15 @@
       color: var(--text-light);
     }
 
-    .cart-empty .empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
-    .cart-empty p { font-size: 0.95rem; }
+    .cart-empty .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    .cart-empty p {
+      font-size: 0.95rem;
+    }
 
     .cart-item {
       display: flex;
@@ -1157,9 +1181,16 @@
       overflow: hidden;
     }
 
-    .cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-info {
+      flex: 1;
+      min-width: 0;
+    }
 
     .cart-item-info h4 {
       font-size: 0.9rem;
@@ -1202,7 +1233,11 @@
       line-height: 1;
     }
 
-    .qty-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--indigo); }
+    .qty-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--indigo);
+    }
 
     .cart-item-qty span {
       font-size: 0.9rem;
@@ -1222,7 +1257,9 @@
       transition: var(--transition);
     }
 
-    .cart-item-remove:hover { color: #E53935; }
+    .cart-item-remove:hover {
+      color: #E53935;
+    }
 
     .cart-item-subtotal {
       font-size: 0.85rem;
@@ -1246,7 +1283,11 @@
       margin-bottom: 16px;
     }
 
-    .cart-total span:first-child { font-size: 1rem; font-weight: 600; color: var(--dark); }
+    .cart-total span:first-child {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
 
     .cart-total .total-price {
       font-size: 1.3rem;
@@ -1296,7 +1337,7 @@
       opacity: 0;
       visibility: hidden;
       transition: var(--transition);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
 
     .checkout-modal.open {
@@ -1305,7 +1346,11 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
-    .checkout-modal h3 { font-size: 1.4rem; color: var(--indigo); margin-bottom: 4px; }
+    .checkout-modal h3 {
+      font-size: 1.4rem;
+      color: var(--indigo);
+      margin-bottom: 4px;
+    }
 
     .checkout-modal .modal-subtitle {
       color: var(--text-light);
@@ -1313,7 +1358,9 @@
       margin-bottom: 1.5rem;
     }
 
-    .checkout-modal .form-group { margin-bottom: 16px; }
+    .checkout-modal .form-group {
+      margin-bottom: 16px;
+    }
 
     .checkout-modal .form-group label {
       display: block;
@@ -1343,12 +1390,26 @@
       box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
     }
 
-    .checkout-modal .form-group textarea { resize: vertical; min-height: 80px; }
+    .checkout-modal .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
 
-    .modal-actions { display: flex; gap: 12px; margin-top: 8px; }
-    .modal-actions .btn { flex: 1; text-align: center; }
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
 
-    .btn-wa { background: #25D366; color: var(--white); }
+    .modal-actions .btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: var(--white);
+    }
 
     .btn-wa:hover {
       background: #20BD5E;
@@ -1356,8 +1417,14 @@
       transform: translateY(-2px);
     }
 
-    .btn-cancel { background: var(--cream-dark); color: var(--text); }
-    .btn-cancel:hover { background: #E0D5C0; }
+    .btn-cancel {
+      background: var(--cream-dark);
+      color: var(--text);
+    }
+
+    .btn-cancel:hover {
+      background: #E0D5C0;
+    }
 
     /* ─── Add to Cart Button ─── */
 
@@ -1375,7 +1442,10 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .btn-add-cart:hover { background: var(--indigo-light); transform: translateY(-1px); }
+    .btn-add-cart:hover {
+      background: var(--indigo-light);
+      transform: translateY(-1px);
+    }
 
     .gallery-add-btn {
       padding: 10px 24px;
@@ -1391,7 +1461,10 @@
       margin-top: 8px;
     }
 
-    .gallery-add-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .gallery-add-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
 
     /* ─── Toast Notification ─── */
 
@@ -1406,7 +1479,7 @@
       border-radius: 50px;
       font-size: 0.9rem;
       font-weight: 500;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       z-index: 3000;
       opacity: 0;
       transition: var(--transition);
@@ -1414,12 +1487,26 @@
       white-space: nowrap;
     }
 
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
 
     @media (max-width: 640px) {
-      .checkout-modal { padding: 24px; }
-      .cart-sidebar { width: 100%; max-width: 100vw; }
-      .toast { font-size: 0.8rem; padding: 12px 20px; white-space: normal; }
+      .checkout-modal {
+        padding: 24px;
+      }
+
+      .cart-sidebar {
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      .toast {
+        font-size: 0.8rem;
+        padding: 12px 20px;
+        white-space: normal;
+      }
     }
 
     /* ─── Size Selector ─── */
@@ -1461,8 +1548,8 @@
     }
 
     .gallery-overlay .size-select {
-      background-color: rgba(255,255,255,0.9);
-      border-color: rgba(255,255,255,0.3);
+      background-color: rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 255, 255, 0.3);
       font-size: 0.78rem;
       padding: 5px 28px 5px 10px;
     }
@@ -1527,7 +1614,7 @@
       opacity: 0;
       visibility: hidden;
       transition: var(--transition);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
 
     .size-modal.open {
@@ -1548,7 +1635,9 @@
       margin-bottom: 1.5rem;
     }
 
-    .size-modal .form-group { margin-bottom: 16px; }
+    .size-modal .form-group {
+      margin-bottom: 16px;
+    }
 
     .size-modal .form-group label {
       display: block;
@@ -1584,8 +1673,16 @@
       margin-bottom: 16px;
     }
 
-    .size-result-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .size-result-label { font-size: 0.85rem; color: var(--text-light); margin-bottom: 4px; }
+    .size-result-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .size-result-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
 
     .size-result-value {
       font-size: 2.2rem;
@@ -1595,12 +1692,28 @@
       line-height: 1.2;
     }
 
-    .size-result-desc { font-size: 0.82rem; color: var(--text-light); margin-top: 4px; }
-    .size-modal .modal-actions { display: flex; gap: 12px; margin-top: 8px; }
-    .size-modal .modal-actions .btn { flex: 1; text-align: center; }
+    .size-result-desc {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    .size-modal .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .size-modal .modal-actions .btn {
+      flex: 1;
+      text-align: center;
+    }
 
     @media (max-width: 640px) {
-      .size-modal { padding: 24px; }
+      .size-modal {
+        padding: 24px;
+      }
+
       .size-float-btn {
         bottom: 82px;
         right: 20px;
@@ -1609,8 +1722,91 @@
         font-size: 1.1rem;
       }
     }
+
+    /* ─── Product Carousel ─── */
+
+    .product-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .product-carousel-slide {
+      flex: 0 0 100%;
+      display: grid;
+      gap: 28px;
+    }
+
+    .new-arrivals .product-carousel-slide {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery .product-carousel-slide {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 2.5rem;
+    }
+
+    .product-carousel-nav .carousel-btn {
+      background: var(--cream-dark);
+      color: var(--text);
+      border: 1px solid transparent;
+    }
+
+    .product-carousel-nav .carousel-btn:hover {
+      background: var(--gold);
+      color: var(--indigo);
+      border-color: var(--gold);
+    }
+
+    .new-arrivals .product-carousel-nav .carousel-dot {
+      background: rgba(62, 39, 35, 0.25);
+    }
+
+    .new-arrivals .product-carousel-nav .carousel-dot.active {
+      background: var(--gold);
+    }
+
+    .gallery .product-carousel-nav .carousel-dot {
+      background: rgba(62, 39, 35, 0.25);
+    }
+
+    .gallery .product-carousel-nav .carousel-dot.active {
+      background: var(--gold);
+    }
+
+    @media (max-width: 1024px) {
+      .product-carousel-slide {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .product-carousel-slide {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      .product-carousel-nav {
+        gap: 10px;
+        margin-top: 1.5rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- ═══════════ HEADER ═══════════ -->
@@ -1646,7 +1842,8 @@
       <div class="hero-badge">✦ Warisan Budaya Indonesia</div>
       <h1>Harmoni Budaya dalam<br><span>Setiap Helai</span></h1>
       <p class="hero-tagline">"Batik adalah baju khas Jogja"</p>
-      <p>Selamat datang di <strong>BATIK SURYA DEWI</strong> — warisan budaya yang kami hadirkan dengan cinta dan keahlian turun-temurun. Setiap kain adalah cerita, setiap motif adalah doa.</p>
+      <p>Selamat datang di <strong>BATIK SURYA DEWI</strong> — warisan budaya yang kami hadirkan dengan cinta dan
+        keahlian turun-temurun. Setiap kain adalah cerita, setiap motif adalah doa.</p>
       <div class="hero-buttons">
         <a href="#types" class="btn btn-primary">Lihat Koleksi</a>
         <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
@@ -1668,7 +1865,8 @@
           </div>
           <div class="card-body">
             <h3>Batik Tulis</h3>
-            <p>Dibuat dengan tangan menggunakan canting dan malam. Setiap motif memiliki keunikan & nilai seni tinggi. Proses pengerjaan 2–4 minggu. Inilah batik paling autentik yang menjadi kebanggaan budaya kami.</p>
+            <p>Dibuat dengan tangan menggunakan canting dan malam. Setiap motif memiliki keunikan & nilai seni tinggi.
+              Proses pengerjaan 2–4 minggu. Inilah batik paling autentik yang menjadi kebanggaan budaya kami.</p>
           </div>
         </div>
 
@@ -1678,7 +1876,8 @@
           </div>
           <div class="card-body">
             <h3>Batik Cap</h3>
-            <p>Dibuat dengan cap tembaga bermotif. Rapi, konsisten, dan lebih cepat — namun tetap mempertahankan keaslian batik. Pilihan tepat bagi Anda yang menginginkan batik berkualitas dengan harga bersahabat.</p>
+            <p>Dibuat dengan cap tembaga bermotif. Rapi, konsisten, dan lebih cepat — namun tetap mempertahankan
+              keaslian batik. Pilihan tepat bagi Anda yang menginginkan batik berkualitas dengan harga bersahabat.</p>
           </div>
         </div>
 
@@ -1688,7 +1887,8 @@
           </div>
           <div class="card-body">
             <h3>Batik Printing</h3>
-            <p>Motif batik modern dengan teknik printing. Harga terjangkau, motif beragam, cocok untuk busana sehari-hari. Tetap tampil gaya dengan sentuhan batik di setiap kesempatan.</p>
+            <p>Motif batik modern dengan teknik printing. Harga terjangkau, motif beragam, cocok untuk busana
+              sehari-hari. Tetap tampil gaya dengan sentuhan batik di setiap kesempatan.</p>
           </div>
         </div>
       </div>
@@ -1702,97 +1902,201 @@
       <div class="section-divider"></div>
       <p class="section-subtitle fade-in">Temukan gaya terbaikmu dengan koleksi batik terbaru kami</p>
 
-      <div class="products-grid">
-        <div class="product-card fade-in" data-id="new-1" data-name="Kemeja Batik Tulis Parang" data-price="450000" data-image="images/new-1.jpg">
-          <span class="product-badge">Baru</span>
-          <div class="card-img">
-            <img src="images/new-1.jpg" alt="Kemeja Batik Tulis Parang" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h4>Kemeja Batik Tulis Parang</h4>
-            <p class="type-label">Batik Tulis</p>
-            <p class="price">Rp 450.000</p>
-            <div class="size-selector">
-              <select class="size-select">
-                <option value="S">S</option>
-                <option value="M" selected>M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-                <option value="XXXL">XXXL</option>
-              </select>
+      <div class="product-carousel" data-carousel="newArrivals">
+        <div class="product-carousel-track" id="newArrivalsTrack">
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="new-1" data-name="Kemeja Batik Tulis Parang" data-price="450000"
+              data-image="images/new-1.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-1.jpg" alt="Kemeja Batik Tulis Parang" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kemeja Batik Tulis Parang</h4>
+                <p class="type-label">Batik Tulis</p>
+                <p class="price">Rp 450.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
             </div>
-            <button class="btn-add-cart">+ Beli</button>
+            <div class="product-card fade-in" data-id="new-2" data-name="Batik Cap Motif Kawung" data-price="275000"
+              data-image="images/new-2.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-2.jpg" alt="Batik Cap Motif Kawung" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Batik Cap Motif Kawung</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 275.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-3" data-name="Dress Batik Printing Modern"
+              data-price="185000" data-image="images/new-3.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-3.jpg" alt="Dress Batik Printing Modern" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Printing Modern</h4>
+                <p class="type-label">Batik Printing</p>
+                <p class="price">Rp 185.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-4" data-name="Kemeja Batik Couple" data-price="520000"
+              data-image="images/new-4.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-4.jpg" alt="Kemeja Batik Couple" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kemeja Batik Couple</h4>
+                <p class="type-label">Batik Tulis &amp; Cap</p>
+                <p class="price">Rp 520.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="new-5" data-name="Batik Tulis Sidomukti" data-price="375000"
+              data-image="images/new-5.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-5.jpg" alt="Batik Tulis Sidomukti" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Batik Tulis Sidomukti</h4>
+                <p class="type-label">Batik Tulis</p>
+                <p class="price">Rp 375.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-6" data-name="Batik Cap Truntum" data-price="295000"
+              data-image="images/new-6.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-6.jpg" alt="Batik Cap Truntum" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Batik Cap Truntum</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 295.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-7" data-name="Dress Batik Modern Floral" data-price="195000"
+              data-image="images/new-7.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-7.jpg" alt="Dress Batik Modern Floral" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Modern Floral</h4>
+                <p class="type-label">Batik Printing</p>
+                <p class="price">Rp 195.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-8" data-name="Kemeja Batik Pria Slim Fit" data-price="425000"
+              data-image="images/new-8.jpg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/new-8.jpg" alt="Kemeja Batik Pria Slim Fit" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kemeja Batik Pria Slim Fit</h4>
+                <p class="type-label">Batik Tulis &amp; Cap</p>
+                <p class="price">Rp 425.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="product-card fade-in" data-id="new-2" data-name="Batik Cap Motif Kawung" data-price="275000" data-image="images/new-2.jpg">
-          <span class="product-badge">Baru</span>
-          <div class="card-img">
-            <img src="images/new-2.jpg" alt="Batik Cap Motif Kawung" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h4>Batik Cap Motif Kawung</h4>
-            <p class="type-label">Batik Cap</p>
-            <p class="price">Rp 275.000</p>
-            <div class="size-selector">
-              <select class="size-select">
-                <option value="S">S</option>
-                <option value="M" selected>M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-                <option value="XXXL">XXXL</option>
-              </select>
-            </div>
-            <button class="btn-add-cart">+ Beli</button>
-          </div>
-        </div>
-
-        <div class="product-card fade-in" data-id="new-3" data-name="Dress Batik Printing Modern" data-price="185000" data-image="images/new-3.jpg">
-          <span class="product-badge">Baru</span>
-          <div class="card-img">
-            <img src="images/new-3.jpg" alt="Dress Batik Printing Modern" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h4>Dress Batik Printing Modern</h4>
-            <p class="type-label">Batik Printing</p>
-            <p class="price">Rp 185.000</p>
-            <div class="size-selector">
-              <select class="size-select">
-                <option value="S">S</option>
-                <option value="M" selected>M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-                <option value="XXXL">XXXL</option>
-              </select>
-            </div>
-            <button class="btn-add-cart">+ Beli</button>
-          </div>
-        </div>
-
-        <div class="product-card fade-in" data-id="new-4" data-name="Kemeja Batik Couple" data-price="520000" data-image="images/new-4.jpg">
-          <span class="product-badge">Baru</span>
-          <div class="card-img">
-            <img src="images/new-4.jpg" alt="Kemeja Batik Couple" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h4>Kemeja Batik Couple</h4>
-            <p class="type-label">Batik Tulis &amp; Cap</p>
-            <p class="price">Rp 520.000</p>
-            <div class="size-selector">
-              <select class="size-select">
-                <option value="S">S</option>
-                <option value="M" selected>M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-                <option value="XXXL">XXXL</option>
-              </select>
-            </div>
-            <button class="btn-add-cart">+ Beli</button>
-          </div>
+        <div class="product-carousel-nav">
+          <button class="carousel-btn" data-carousel="newArrivals" data-dir="prev" aria-label="Sebelumnya">‹</button>
+          <div class="carousel-controls" id="newArrivalsDots"></div>
+          <button class="carousel-btn" data-carousel="newArrivals" data-dir="next" aria-label="Berikutnya">›</button>
         </div>
       </div>
     </div>
@@ -1805,120 +2109,261 @@
       <div class="section-divider"></div>
       <p class="section-subtitle fade-in">Koleksi pilihan dari BATIK SURYA DEWI untuk Anda</p>
 
-      <div class="gallery-grid">
-        <div class="gallery-item fade-in" data-id="gal-1" data-name="Batik Tulis Mega Mendung" data-price="450000" data-image="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG">
-          <img src="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG" alt="Batik Tulis Mega Mendung" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Tulis Mega Mendung</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
+      <div class="product-carousel" data-carousel="gallery">
+        <div class="product-carousel-track" id="galleryTrack">
+          <div class="product-carousel-slide">
+            <div class="gallery-item fade-in" data-id="gal-1" data-name="Batik Tulis Mega Mendung" data-price="450000"
+              data-image="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG">
+              <img src="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG" alt="Batik Tulis Mega Mendung" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Tulis Mega Mendung</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-1">+ Beli</button>
+                </div>
               </div>
-              <button class="gallery-add-btn" data-id="gal-1">+ Beli</button>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-2" data-name="Batik Cap Sidomukti" data-price="275000"
+              data-image="images/gallery-2.jpg">
+              <img src="images/gallery-2.jpg" alt="Batik Cap Sidomukti" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Cap Sidomukti</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-2">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-3" data-name="Batik Printing Floral" data-price="175000"
+              data-image="images/gallery-3.jpg">
+              <img src="images/gallery-3.jpg" alt="Batik Printing Floral" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Printing Floral</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-3">+ Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="gallery-item fade-in" data-id="gal-4" data-name="Batik Tulis Sekar Jagad" data-price="425000"
+              data-image="images/gallery-4.jpg">
+              <img src="images/gallery-4.jpg" alt="Batik Tulis Sekar Jagad" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Tulis Sekar Jagad</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-4">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-5" data-name="Batik Cap Parang Kusumo" data-price="325000"
+              data-image="images/gallery-5.jpg">
+              <img src="images/gallery-5.jpg" alt="Batik Cap Parang Kusumo" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Cap Parang Kusumo</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-5">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-6" data-name="Batik Modern Abstract" data-price="200000"
+              data-image="images/gallery-6.jpg">
+              <img src="images/gallery-6.jpg" alt="Batik Modern Abstract" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Modern Abstract</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-6">+ Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="gallery-item fade-in" data-id="gal-7" data-name="Batik Tulis Cemukiran" data-price="475000"
+              data-image="images/gallery-7.jpg">
+              <img src="images/gallery-7.jpg" alt="Batik Tulis Cemukiran" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Tulis Cemukiran</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-7">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-8" data-name="Batik Cap Sidoasih" data-price="285000"
+              data-image="images/gallery-8.jpg">
+              <img src="images/gallery-8.jpg" alt="Batik Cap Sidoasih" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Cap Sidoasih</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-8">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-9" data-name="Batik Printing Geometri" data-price="165000"
+              data-image="images/gallery-9.jpg">
+              <img src="images/gallery-9.jpg" alt="Batik Printing Geometri" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Printing Geometri</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-9">+ Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="gallery-item fade-in" data-id="gal-10" data-name="Batik Tulis Kawung" data-price="395000"
+              data-image="images/gallery-10.jpg">
+              <img src="images/gallery-10.jpg" alt="Batik Tulis Kawung" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Tulis Kawung</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-10">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-11" data-name="Batik Cap Semen Rante" data-price="315000"
+              data-image="images/gallery-11.jpg">
+              <img src="images/gallery-11.jpg" alt="Batik Cap Semen Rante" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Batik Cap Semen Rante</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-11">+ Beli</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item fade-in" data-id="gal-12" data-name="Dress Batik Modern 3" data-price="205000"
+              data-image="images/gallery-12.jpg">
+              <img src="images/gallery-12.jpg" alt="Dress Batik Modern 3" loading="lazy">
+              <div class="gallery-overlay">
+                <div>
+                  <h4>Dress Batik Modern 3</h4>
+                  <div class="size-selector">
+                    <select class="size-select">
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
+                      <option value="XXXL">XXXL</option>
+                    </select>
+                  </div>
+                  <button class="gallery-add-btn" data-id="gal-12">+ Beli</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="gallery-item fade-in" data-id="gal-2" data-name="Batik Cap Sidomukti" data-price="275000" data-image="images/gallery-2.jpg">
-          <img src="images/gallery-2.jpg" alt="Batik Cap Sidomukti" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Cap Sidomukti</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <button class="gallery-add-btn" data-id="gal-2">+ Beli</button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item fade-in" data-id="gal-3" data-name="Batik Printing Floral" data-price="175000" data-image="images/gallery-3.jpg">
-          <img src="images/gallery-3.jpg" alt="Batik Printing Floral" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Printing Floral</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <button class="gallery-add-btn" data-id="gal-3">+ Beli</button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item fade-in" data-id="gal-4" data-name="Batik Tulis Sekar Jagad" data-price="425000" data-image="images/gallery-4.jpg">
-          <img src="images/gallery-4.jpg" alt="Batik Tulis Sekar Jagad" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Tulis Sekar Jagad</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <button class="gallery-add-btn" data-id="gal-4">+ Beli</button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item fade-in" data-id="gal-5" data-name="Batik Cap Parang Kusumo" data-price="325000" data-image="images/gallery-5.jpg">
-          <img src="images/gallery-5.jpg" alt="Batik Cap Parang Kusumo" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Cap Parang Kusumo</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <button class="gallery-add-btn" data-id="gal-5">+ Beli</button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item fade-in" data-id="gal-6" data-name="Batik Modern Abstract" data-price="200000" data-image="images/gallery-6.jpg">
-          <img src="images/gallery-6.jpg" alt="Batik Modern Abstract" loading="lazy">
-          <div class="gallery-overlay">
-            <div>
-              <h4>Batik Modern Abstract</h4>
-              <div class="size-selector">
-                <select class="size-select">
-                  <option value="S">S</option>
-                  <option value="M" selected>M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <button class="gallery-add-btn" data-id="gal-6">+ Beli</button>
-            </div>
-          </div>
+        <div class="product-carousel-nav">
+          <button class="carousel-btn" data-carousel="gallery" data-dir="prev" aria-label="Sebelumnya">‹</button>
+          <div class="carousel-controls" id="galleryDots"></div>
+          <button class="carousel-btn" data-carousel="gallery" data-dir="next" aria-label="Berikutnya">›</button>
         </div>
       </div>
     </div>
@@ -1939,7 +2384,8 @@
                 <img src="images/customer-1.jpg" alt="Sari Dewi" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
-              <blockquote>"Batiknya berkualitas tinggi, bahan adem dan motifnya cantik. Pengiriman cepat! Sudah jadi langganan saya."</blockquote>
+              <blockquote>"Batiknya berkualitas tinggi, bahan adem dan motifnya cantik. Pengiriman cepat! Sudah jadi
+                langganan saya."</blockquote>
               <p class="name">— Sari Dewi</p>
             </div>
           </div>
@@ -1949,7 +2395,8 @@
                 <img src="images/customer-2.jpg" alt="Budi Hartono" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
-              <blockquote>"Pertama kali beli batik online, tapi BATIK SURYA DEWI bikin percaya. Kualitasnya sesuai ekspektasi, malah lebih!"</blockquote>
+              <blockquote>"Pertama kali beli batik online, tapi BATIK SURYA DEWI bikin percaya. Kualitasnya sesuai
+                ekspektasi, malah lebih!"</blockquote>
               <p class="name">— Budi Hartono</p>
             </div>
           </div>
@@ -1959,7 +2406,8 @@
                 <img src="images/customer-3.jpg" alt="Ani Rahmawati" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
-              <blockquote>"Pelayanan ramah, produk sesuai foto. Saya sudah repeat order 3 kali! Recommended banget buat yang cari batik asli Jogja."</blockquote>
+              <blockquote>"Pelayanan ramah, produk sesuai foto. Saya sudah repeat order 3 kali! Recommended banget buat
+                yang cari batik asli Jogja."</blockquote>
               <p class="name">— Ani Rahmawati</p>
             </div>
           </div>
@@ -2023,7 +2471,10 @@
           </div>
 
           <div class="map-placeholder">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31629.11783490393!2d110.333614!3d-7.827779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b81d3%3A0x3027a76e352be30!2sBangunjiwo%2C%20Kasihan%2C%20Bantul%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Bangunjiwo"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31629.11783490393!2d110.333614!3d-7.827779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b81d3%3A0x3027a76e352be30!2sBangunjiwo%2C%20Kasihan%2C%20Bantul%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Peta Bangunjiwo"></iframe>
           </div>
         </div>
 
@@ -2159,13 +2610,13 @@
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
 
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function () {
       nav.classList.toggle('open');
       this.classList.toggle('active');
     });
 
-    document.querySelectorAll('.nav a').forEach(function(link) {
-      link.addEventListener('click', function() {
+    document.querySelectorAll('.nav a').forEach(function (link) {
+      link.addEventListener('click', function () {
         nav.classList.remove('open');
         hamburger.classList.remove('active');
       });
@@ -2183,7 +2634,7 @@
     function goToSlide(index) {
       currentSlide = index;
       track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-      dots.forEach(function(dot, i) {
+      dots.forEach(function (dot, i) {
         dot.classList.toggle('active', i === currentSlide);
       });
     }
@@ -2196,19 +2647,19 @@
       goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
     }
 
-    dots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
         goToSlide(parseInt(this.dataset.index));
         resetAutoSlide();
       });
     });
 
-    nextBtn.addEventListener('click', function() {
+    nextBtn.addEventListener('click', function () {
       nextSlide();
       resetAutoSlide();
     });
 
-    prevBtn.addEventListener('click', function() {
+    prevBtn.addEventListener('click', function () {
       prevSlide();
       resetAutoSlide();
     });
@@ -2227,7 +2678,7 @@
     // ─── Back to Top ───
     const backToTop = document.getElementById('backToTop');
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > 400) {
         backToTop.classList.add('visible');
       } else {
@@ -2235,15 +2686,15 @@
       }
     });
 
-    backToTop.addEventListener('click', function() {
+    backToTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // ─── Scroll Animations (Intersection Observer) ───
     const fadeEls = document.querySelectorAll('.fade-in');
 
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
@@ -2253,21 +2704,21 @@
       rootMargin: '0px 0px -50px 0px'
     });
 
-    fadeEls.forEach(function(el) {
+    fadeEls.forEach(function (el) {
       observer.observe(el);
     });
 
     // ─── Contact Form ───
     const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = this.querySelector('.btn');
       var original = btn.textContent;
       btn.textContent = 'Pesan Terkirim ✓';
       btn.style.background = '#4CAF50';
       btn.style.color = '#fff';
-      setTimeout(function() {
+      setTimeout(function () {
         btn.textContent = original;
         btn.style.background = '';
         btn.style.color = '';
@@ -2277,7 +2728,7 @@
 
     // ─── Sticky Header Shadow ───
     const header = document.getElementById('header');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > 50) {
         header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
       } else {
@@ -2315,7 +2766,7 @@
     // ─── Cart Functions ───
     function addToCart(id, name, price, image, size) {
       var key = id + '|' + size;
-      var existing = cart.find(function(item) { return item.key === key; });
+      var existing = cart.find(function (item) { return item.key === key; });
       if (existing) {
         existing.qty += 1;
       } else {
@@ -2326,12 +2777,12 @@
     }
 
     function removeFromCart(key) {
-      cart = cart.filter(function(item) { return item.key !== key; });
+      cart = cart.filter(function (item) { return item.key !== key; });
       renderCart();
     }
 
     function updateQty(key, delta) {
-      var item = cart.find(function(item) { return item.key === key; });
+      var item = cart.find(function (item) { return item.key === key; });
       if (!item) return;
       item.qty += delta;
       if (item.qty <= 0) {
@@ -2347,13 +2798,13 @@
 
     function getTotal() {
       var total = 0;
-      cart.forEach(function(item) { total += item.price * item.qty; });
+      cart.forEach(function (item) { total += item.price * item.qty; });
       return total;
     }
 
     function renderCart() {
       var count = 0;
-      cart.forEach(function(item) { count += item.qty; });
+      cart.forEach(function (item) { count += item.qty; });
       if (count > 0) {
         cartBadge.textContent = count;
         cartBadge.classList.add('visible');
@@ -2369,23 +2820,23 @@
 
       cartFooter.style.display = 'block';
       var html = '';
-      cart.forEach(function(item) {
+      cart.forEach(function (item) {
         var subtotal = item.price * item.qty;
         html += '' +
           '<div class="cart-item">' +
-            '<div class="cart-item-img"><img src="' + item.image + '" alt="' + item.name + '" loading="lazy"></div>' +
-            '<div class="cart-item-info">' +
-              '<h4>' + item.name + '</h4>' +
-              '<div class="item-price">' + formatPrice(item.price) + '</div>' +
-              '<div style="font-size:0.78rem;color:var(--text-light);margin-top:2px;">Ukuran: ' + item.size + '</div>' +
-              '<div class="cart-item-qty">' +
-                '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', -1)">−</button>' +
-                '<span>' + item.qty + '</span>' +
-                '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', 1)">+</button>' +
-              '</div>' +
-            '</div>' +
-            '<div class="cart-item-subtotal">' + formatPrice(subtotal) + '</div>' +
-            '<button class="cart-item-remove" onclick="removeFromCart(\'' + item.key + '\')" aria-label="Hapus">✕</button>' +
+          '<div class="cart-item-img"><img src="' + item.image + '" alt="' + item.name + '" loading="lazy"></div>' +
+          '<div class="cart-item-info">' +
+          '<h4>' + item.name + '</h4>' +
+          '<div class="item-price">' + formatPrice(item.price) + '</div>' +
+          '<div style="font-size:0.78rem;color:var(--text-light);margin-top:2px;">Ukuran: ' + item.size + '</div>' +
+          '<div class="cart-item-qty">' +
+          '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', -1)">−</button>' +
+          '<span>' + item.qty + '</span>' +
+          '<button class="qty-btn" onclick="updateQty(\'' + item.key + '\', 1)">+</button>' +
+          '</div>' +
+          '</div>' +
+          '<div class="cart-item-subtotal">' + formatPrice(subtotal) + '</div>' +
+          '<button class="cart-item-remove" onclick="removeFromCart(\'' + item.key + '\')" aria-label="Hapus">✕</button>' +
           '</div>';
       });
       cartItems.innerHTML = html;
@@ -2399,12 +2850,12 @@
       toast.className = 'toast';
       toast.textContent = msg;
       document.body.appendChild(toast);
-      requestAnimationFrame(function() {
+      requestAnimationFrame(function () {
         toast.classList.add('show');
       });
-      setTimeout(function() {
+      setTimeout(function () {
         toast.classList.remove('show');
-        setTimeout(function() { toast.remove(); }, 300);
+        setTimeout(function () { toast.remove(); }, 300);
       }, 2500);
     }
 
@@ -2435,8 +2886,8 @@
     }
 
     // ─── Event Listeners: Add to Cart ───
-    document.querySelectorAll('.btn-add-cart').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
+    document.querySelectorAll('.btn-add-cart').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
         e.stopPropagation();
         var card = this.closest('.product-card');
         var id = card.dataset.id;
@@ -2448,8 +2899,8 @@
       });
     });
 
-    document.querySelectorAll('.gallery-add-btn').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
+    document.querySelectorAll('.gallery-add-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
         e.stopPropagation();
         var item = this.closest('.gallery-item');
         var id = item.dataset.id;
@@ -2464,14 +2915,14 @@
     // ─── Event Listeners: Cart UI ───
     cartTrigger.addEventListener('click', openCart);
     cartClose.addEventListener('click', closeCart);
-    overlay.addEventListener('click', function() {
+    overlay.addEventListener('click', function () {
       closeCart();
       closeCheckoutModal();
       closeSizeModal();
     });
 
     // ─── Checkout ───
-    checkoutBtn.addEventListener('click', function() {
+    checkoutBtn.addEventListener('click', function () {
       if (cart.length === 0) return;
       closeCart();
       setTimeout(openCheckoutModal, 350);
@@ -2479,7 +2930,7 @@
 
     modalCancel.addEventListener('click', closeCheckoutModal);
 
-    checkoutForm.addEventListener('submit', function(e) {
+    checkoutForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = document.getElementById('checkoutName').value.trim();
       var phone = document.getElementById('checkoutPhone').value.trim();
@@ -2493,7 +2944,7 @@
 
       var msg = '*Pesanan BATIK SURYA DEWI*\n\n';
       msg += '*Item Pesanan:*\n';
-      cart.forEach(function(item) {
+      cart.forEach(function (item) {
         msg += item.name + ' (' + item.size + ') - ' + item.qty + 'x = ' + formatPrice(item.price * item.qty) + '\n';
       });
       msg += '\n*Total: ' + formatPrice(getTotal()) + '*\n\n';
@@ -2577,7 +3028,7 @@
     sizeFloatBtn.addEventListener('click', openSizeModal);
     sizeModalCancel.addEventListener('click', closeSizeModal);
 
-    sizeForm.addEventListener('submit', function(e) {
+    sizeForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var height = parseInt(heightInput.value);
       var weight = parseInt(weightInput.value);
@@ -2603,14 +3054,73 @@
     });
 
     // ─── Size Float Button Visibility ───
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > 600) {
         sizeFloatBtn.classList.add('visible');
       } else {
         sizeFloatBtn.classList.remove('visible');
       }
     });
+
+    // ─── Product Carousel ───
+    function initProductCarousel(name) {
+      var wrapper = document.querySelector('[data-carousel="' + name + '"]');
+      if (!wrapper) return;
+      var track = wrapper.querySelector('.product-carousel-track');
+      var slides = track.querySelectorAll('.product-carousel-slide');
+      var dotsContainer = wrapper.querySelector('.carousel-controls');
+      var prevBtn = wrapper.querySelector('[data-dir="prev"]');
+      var nextBtn = wrapper.querySelector('[data-dir="next"]');
+      var current = 0;
+      var total = slides.length;
+      var interval;
+
+      if (total < 2) return;
+
+      slides.forEach(function (s) { s.classList.remove('fade-in'); });
+
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('data-index', i);
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dotsContainer.appendChild(dot);
+      }
+
+      function goTo(index) {
+        current = index;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        wrapper.querySelectorAll('.carousel-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function nextSlide() { goTo((current + 1) % total); }
+      function prevSlide() { goTo((current - 1 + total) % total); }
+
+      dotsContainer.addEventListener('click', function (e) {
+        if (e.target.classList.contains('carousel-dot')) {
+          goTo(parseInt(e.target.getAttribute('data-index')));
+          resetAuto();
+        }
+      });
+
+      prevBtn.addEventListener('click', function () { prevSlide(); resetAuto(); });
+      nextBtn.addEventListener('click', function () { nextSlide(); resetAuto(); });
+
+      function startAuto() { interval = setInterval(nextSlide, 4000); }
+      function resetAuto() { clearInterval(interval); startAuto(); }
+
+      wrapper.addEventListener('mouseenter', function () { clearInterval(interval); });
+      wrapper.addEventListener('mouseleave', function () { startAuto(); });
+
+      startAuto();
+    }
+
+    initProductCarousel('newArrivals');
+    initProductCarousel('gallery');
   </script>
 
 </body>
+
 </html>
