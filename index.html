@@ -1417,6 +1417,85 @@
       transform: translateY(-2px);
     }
 
+    /* ─── QRIS Modal ─── */
+
+    .qris-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      width: 420px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 2003;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .qris-modal.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .qris-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .qris-modal .modal-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .qris-wrapper {
+      background: var(--white);
+      border: 2px dashed var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .qris-wrapper img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .qris-total {
+      margin-bottom: 12px;
+    }
+
+    .qris-total span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .qris-total strong {
+      font-size: 1.6rem;
+      color: var(--brown);
+    }
+
+    .qris-hint {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
     .btn-cancel {
       background: var(--cream-dark);
       color: var(--text);
@@ -1727,6 +1806,7 @@
 
     .product-carousel {
       position: relative;
+      z-index: 1;
       overflow: hidden;
     }
 
@@ -1742,6 +1822,10 @@
     }
 
     .new-arrivals .product-carousel-slide {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .wanita .product-carousel-slide {
       grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1804,6 +1888,30 @@
         margin-top: 1.5rem;
       }
     }
+
+    .wanita {
+      padding: 100px 0;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .wanita::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L35 25H55L38 37L45 58L30 46L15 58L22 37L5 25H25Z' fill='%236B3A2A'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .wanita .product-carousel-nav .carousel-dot {
+      background: rgba(62, 39, 35, 0.25);
+    }
+
+    .wanita .product-carousel-nav .carousel-dot.active {
+      background: var(--gold);
+    }
   </style>
 </head>
 
@@ -1818,7 +1926,9 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#home">Beranda</a>
-        <a href="#types">Produk</a>
+        <a href="#types">Jenis Batik</a>
+        <a href="#new-arrivals">Koleksi Pria</a>
+        <a href="#wanita">Koleksi Wanita</a>
         <a href="#gallery">Galeri</a>
         <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
@@ -1861,7 +1971,7 @@
       <div class="types-grid">
         <div class="type-card fade-in">
           <div class="card-img">
-            <img src="images/3fc39274-2dab-4175-aa0e-117b99bd7b70.JPG" alt="Batik Tulis" loading="lazy">
+            <img src="images/IMG_7356.jpg" alt="Batik Tulis" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Batik Tulis</h3>
@@ -1872,7 +1982,7 @@
 
         <div class="type-card fade-in">
           <div class="card-img">
-            <img src="images/6e3b552c-e4bf-456c-b970-571a25c2c05e.JPG" alt="Batik Cap" loading="lazy">
+            <img src="images/kawung-indonesian-batik-fabric-naturally-dyed-sustainable-sarong-sarung-skirt-wrap1_480x.webp" alt="Batik Cap" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Batik Cap</h3>
@@ -1883,7 +1993,7 @@
 
         <div class="type-card fade-in">
           <div class="card-img">
-            <img src="images/batik-printing.jpg" alt="Batik Printing" loading="lazy">
+            <img src="images/9f896e6b6735162a27c5ad4971c748ca.jpg_720x720q80.jpg" alt="Batik Printing" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Batik Printing</h3>
@@ -1898,46 +2008,23 @@
   <!-- ═══════════ NEW ARRIVALS ═══════════ -->
   <section class="new-arrivals" id="new-arrivals">
     <div class="container">
-      <h2 class="section-title fade-in">Koleksi Terbaru</h2>
+      <h2 class="section-title fade-in">Koleksi Pria</h2>
       <div class="section-divider"></div>
       <p class="section-subtitle fade-in">Temukan gaya terbaikmu dengan koleksi batik terbaru kami</p>
 
       <div class="product-carousel" data-carousel="newArrivals">
         <div class="product-carousel-track" id="newArrivalsTrack">
           <div class="product-carousel-slide">
-            <div class="product-card fade-in" data-id="new-1" data-name="Kemeja Batik Tulis Parang" data-price="450000"
-              data-image="images/new-1.jpg">
+            <div class="product-card fade-in" data-id="new-1" data-name="Kemeja Batik Motif Sawat" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 05.32.19.jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-1.jpg" alt="Kemeja Batik Tulis Parang" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 05.32.19.jpeg" alt="Kemeja Batik Motif Sawat" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Kemeja Batik Tulis Parang</h4>
-                <p class="type-label">Batik Tulis</p>
-                <p class="price">Rp 450.000</p>
-                <div class="size-selector">
-                  <select class="size-select">
-                    <option value="S">S</option>
-                    <option value="M" selected>M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    <option value="XXXL">XXXL</option>
-                  </select>
-                </div>
-                <button class="btn-add-cart">+ Beli</button>
-              </div>
-            </div>
-            <div class="product-card fade-in" data-id="new-2" data-name="Batik Cap Motif Kawung" data-price="275000"
-              data-image="images/new-2.jpg">
-              <span class="product-badge">Baru</span>
-              <div class="card-img">
-                <img src="images/new-2.jpg" alt="Batik Cap Motif Kawung" loading="lazy">
-              </div>
-              <div class="card-body">
-                <h4>Batik Cap Motif Kawung</h4>
+                <h4>Kemeja Batik Motif Sawat</h4>
                 <p class="type-label">Batik Cap</p>
-                <p class="price">Rp 275.000</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -1951,16 +2038,16 @@
                 <button class="btn-add-cart">+ Beli</button>
               </div>
             </div>
-            <div class="product-card fade-in" data-id="new-3" data-name="Dress Batik Printing Modern"
-              data-price="185000" data-image="images/new-3.jpg">
+            <div class="product-card fade-in" data-id="new-2" data-name="Kemeja Batik Motif Parang Rusak dan Ceplok" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 05.59.55.jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-3.jpg" alt="Dress Batik Printing Modern" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 05.59.55.jpeg" alt="Kemeja Batik Motif Parang Rusak dan Ceplok" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Dress Batik Printing Modern</h4>
-                <p class="type-label">Batik Printing</p>
-                <p class="price">Rp 185.000</p>
+                <h4>Kemeja Batik Motif Parang Rusak dan Ceplok</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -1974,16 +2061,39 @@
                 <button class="btn-add-cart">+ Beli</button>
               </div>
             </div>
-            <div class="product-card fade-in" data-id="new-4" data-name="Kemeja Batik Couple" data-price="520000"
-              data-image="images/new-4.jpg">
+            <div class="product-card fade-in" data-id="new-3" data-name="Kemeja Batik Motif Lidah Api dan Ukel"
+              data-price="135000" data-image="images/WhatsApp Image 2026-06-07 at 05.32.38 (1).jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-4.jpg" alt="Kemeja Batik Couple" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 05.32.38 (1).jpeg" alt="Kemeja Batik Motif Lidah Api dan Ukel" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Kemeja Batik Couple</h4>
-                <p class="type-label">Batik Tulis &amp; Cap</p>
-                <p class="price">Rp 520.000</p>
+                <h4>Kemeja Batik Motif Lidah Api dan Ukel</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 135.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-4" data-name="Kemeja Batik Motif Parang, Kawung, dan Pseudo Tenun" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 05.59.28 (1).jpeg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-07 at 05.59.28 (1).jpeg" alt="Kemeja Batik Motif Parang, Kawung, dan Pseudo Tenun" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kemeja Batik Motif Parang, Kawung, dan Pseudo Tenun</h4>
+                <p class="type-label">Batik TCap</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -1999,39 +2109,16 @@
             </div>
           </div>
           <div class="product-carousel-slide">
-            <div class="product-card fade-in" data-id="new-5" data-name="Batik Tulis Sidomukti" data-price="375000"
-              data-image="images/new-5.jpg">
+            <div class="product-card fade-in" data-id="new-5" data-name="Kemeja Batik Motif Burung Phoenix dan Ceplok" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 06.01.50 (1).jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-5.jpg" alt="Batik Tulis Sidomukti" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 06.01.50 (1).jpeg" alt="Kemeja Batik Motif Burung Phoenix dan Ceplok" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Batik Tulis Sidomukti</h4>
-                <p class="type-label">Batik Tulis</p>
-                <p class="price">Rp 375.000</p>
-                <div class="size-selector">
-                  <select class="size-select">
-                    <option value="S">S</option>
-                    <option value="M" selected>M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    <option value="XXXL">XXXL</option>
-                  </select>
-                </div>
-                <button class="btn-add-cart">+ Beli</button>
-              </div>
-            </div>
-            <div class="product-card fade-in" data-id="new-6" data-name="Batik Cap Truntum" data-price="295000"
-              data-image="images/new-6.jpg">
-              <span class="product-badge">Baru</span>
-              <div class="card-img">
-                <img src="images/new-6.jpg" alt="Batik Cap Truntum" loading="lazy">
-              </div>
-              <div class="card-body">
-                <h4>Batik Cap Truntum</h4>
+                <h4>Kemeja Batik Motif Burung Phoenix dan Ceplok</h4>
                 <p class="type-label">Batik Cap</p>
-                <p class="price">Rp 295.000</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -2045,16 +2132,16 @@
                 <button class="btn-add-cart">+ Beli</button>
               </div>
             </div>
-            <div class="product-card fade-in" data-id="new-7" data-name="Dress Batik Modern Floral" data-price="195000"
-              data-image="images/new-7.jpg">
+            <div class="product-card fade-in" data-id="new-6" data-name="Kemeja Batik Motif Burung Phoenix dan Truntum" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 06.00.30 (1).jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-7.jpg" alt="Dress Batik Modern Floral" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 06.00.30 (1).jpeg" alt="Kemeja Batik Motif Burung Phoenix dan Truntum" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Dress Batik Modern Floral</h4>
-                <p class="type-label">Batik Printing</p>
-                <p class="price">Rp 195.000</p>
+                <h4>Kemeja Batik Motif Burung Phoenix dan Truntum</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -2068,16 +2155,39 @@
                 <button class="btn-add-cart">+ Beli</button>
               </div>
             </div>
-            <div class="product-card fade-in" data-id="new-8" data-name="Kemeja Batik Pria Slim Fit" data-price="425000"
-              data-image="images/new-8.jpg">
+            <div class="product-card fade-in" data-id="new-7" data-name="Kemeja Batik Motif Seling Parang" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 06.01.32 (1).jpeg">
               <span class="product-badge">Baru</span>
               <div class="card-img">
-                <img src="images/new-8.jpg" alt="Kemeja Batik Pria Slim Fit" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-07 at 06.01.32 (1).jpeg" alt="Kemeja Batik Motif Seling Parang" loading="lazy">
               </div>
               <div class="card-body">
-                <h4>Kemeja Batik Pria Slim Fit</h4>
-                <p class="type-label">Batik Tulis &amp; Cap</p>
-                <p class="price">Rp 425.000</p>
+                <h4>Kemeja Batik Motif Seling Parang</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 135.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="new-8" data-name="Kemeja Batik Motif Burung Hong dan Ceplok" data-price="135000"
+              data-image="images/WhatsApp Image 2026-06-07 at 06.02.07.jpeg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-07 at 06.02.07.jpeg" alt="Kemeja Batik Motif Burung Hong dan Ceplok" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Kemeja Batik Motif Burung Hong dan Ceplok</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 135.000</p>
                 <div class="size-selector">
                   <select class="size-select">
                     <option value="S">S</option>
@@ -2102,6 +2212,209 @@
     </div>
   </section>
 
+  <!-- ═══════════ KOLEKSI WANITA ═══════════ -->
+  <section class="wanita" id="wanita">
+    <div class="container">
+      <h2 class="section-title fade-in">Koleksi Wanita</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle fade-in">Koleksi batik modern khusus untuk wanita, gaya dan elegan</p>
+
+      <div class="product-carousel" data-carousel="wanita">
+        <div class="product-carousel-track" id="wanitaTrack">
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="wanita-1" data-name="Dress Batik Motif Sawat"
+              data-price="145000" data-image="images/WhatsApp Image 2026-06-08 at 07.16.27.jpeg">
+              <span class="product-badge">Best Seller</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.16.27.jpeg" alt="Dress Batik Motif Sawat="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Motif Sawat</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-2" data-name="Dress Batik Motif Parang Rusak dan Ceplok" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.17.08.jpeg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.17.08.jpeg" alt="Dress Batik Motif Parang Rusak dan Ceplok" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Motif Parang Rusak dan Ceplok</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-3" data-name="Dress Batik Motif Lidah Api dan Ukel" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.17.26.jpeg">
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.17.26.jpeg" alt="Dress Batik Motif Lidah Api dan Ukel" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Motif Lidah Api dan Ukel</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-4" data-name="Dress Batik Motif Parang, Kawung, dan Pseudo Tenun" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.16.53 (1).jpeg">
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.16.53 (1).jpeg" alt="Dress Motif Parang, Kawung, dan Pseudo Tenun" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Motif Parang, Kawung, dan Pseudo Tenun</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-carousel-slide">
+            <div class="product-card fade-in" data-id="wanita-5" data-name="Dress Batik Kombinasi Tenun Ikat dan Batik Buketan + Payet" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.17.01.jpeg">
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.17.01.jpeg" alt="Dress Batik Kombinasi Tenun Ikat dan Batik Buketan + Payet" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Kombinasi Tenun Ikat dan Batik Buketan + Payet</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-6" data-name="Dress Kemeja Batik Motif Burung Phoenix dan Truntum" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.17.14 (1).jpeg">
+              <span class="product-badge">Baru</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.17.14 (1).jpeg" alt="Dress Kemeja Batik Motif Burung Phoenix dan Truntum" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Batik Motif Burung Phoenix dan Truntum</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-7" data-name="Dress Motif Terumbu Karang" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.19.57 (1).jpeg">
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.19.57 (1).jpeg" alt="Dress Motif Terumbu Karang" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Motif Terumbu Karang</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+            <div class="product-card fade-in" data-id="wanita-8" data-name="Dress Motif Daun Pakis" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-08 at 07.17.39.jpeg">
+              <span class="product-badge">Premium</span>
+              <div class="card-img">
+                <img src="images/WhatsApp Image 2026-06-08 at 07.17.39.jpeg" alt="Dress Motif Daun Pakis" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h4>Dress Motif Daun Pakis</h4>
+                <p class="type-label">Batik Cap</p>
+                <p class="price">Rp 145.000</p>
+                <div class="size-selector">
+                  <select class="size-select">
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </div>
+                <button class="btn-add-cart">+ Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-carousel-nav">
+          <button class="carousel-btn" data-carousel="wanita" data-dir="prev" aria-label="Sebelumnya">‹</button>
+          <div class="carousel-controls" id="wanitaDots"></div>
+          <button class="carousel-btn" data-carousel="wanita" data-dir="next" aria-label="Berikutnya">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════ GALLERY ═══════════ -->
   <section class="gallery" id="gallery">
     <div class="container">
@@ -2112,12 +2425,12 @@
       <div class="product-carousel" data-carousel="gallery">
         <div class="product-carousel-track" id="galleryTrack">
           <div class="product-carousel-slide">
-            <div class="gallery-item fade-in" data-id="gal-1" data-name="Batik Tulis Mega Mendung" data-price="450000"
-              data-image="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG">
-              <img src="images/e3348259-d522-49f6-a008-0a2b407e49ea.JPG" alt="Batik Tulis Mega Mendung" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-1" data-name="Kemeja Batik Kombinasi Tenun Ikat dan Batik Buketan" data-price="135000"
+              data-image="images/WhatsApp Image 2026-05-29 at 07.38.11 (2).jpeg">
+              <img src="images/WhatsApp Image 2026-05-29 at 07.38.11 (2).jpeg" alt="Kemeja Batik Kombinasi Tenun Ikat dan Batik Buketan" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Tulis Mega Mendung</h4>
+                  <h4>Kemeja Batik Kombinasi Tenun Ikat dan Batik Buketan</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2132,12 +2445,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-2" data-name="Batik Cap Sidomukti" data-price="275000"
-              data-image="images/gallery-2.jpg">
-              <img src="images/gallery-2.jpg" alt="Batik Cap Sidomukti" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-2" data-name="Kemeja Batik Motif Semen Burung Hong dan Nitik" data-price="135000"
+              data-image="images/WhatsApp Image 2026-05-29 at 07.38.12 (1).jpeg">
+              <img src="images/WhatsApp Image 2026-05-29 at 07.38.12 (1).jpeg" alt="Kemeja Batik Motif Semen Burung Hong dan Nitik" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Cap Sidomukti</h4>
+                  <h4>Kemeja Batik Motif Semen Burung Hong dan Nitik</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2152,12 +2465,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-3" data-name="Batik Printing Floral" data-price="175000"
-              data-image="images/gallery-3.jpg">
-              <img src="images/gallery-3.jpg" alt="Batik Printing Floral" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-3" data-name="Kemeja Batik Motif Sawat Garuda dan Jlamprang" data-price="135000"
+              data-image="images/WhatsApp Image 2026-05-29 at 07.38.12.jpeg">
+              <img src="images/WhatsApp Image 2026-05-29 at 07.38.12.jpeg" alt="Kemeja Batik Motif Sawat Garuda dan Jlamprang" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Printing Floral</h4>
+                  <h4>Kemeja Batik Motif Sawat Garuda dan Jlamprang</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2174,12 +2487,12 @@
             </div>
           </div>
           <div class="product-carousel-slide">
-            <div class="gallery-item fade-in" data-id="gal-4" data-name="Batik Tulis Sekar Jagad" data-price="425000"
-              data-image="images/gallery-4.jpg">
-              <img src="images/gallery-4.jpg" alt="Batik Tulis Sekar Jagad" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-4" data-name="Kemeja Batik Motif Jlamprang dan Parang Tambal" data-price="135000"
+              data-image="images/merah1.jpg">
+              <img src="images/merah1.jpg" alt="Kemeja Batik Motif Jlamprang dan Parang Tambal" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Tulis Sekar Jagad</h4>
+                  <h4>Kemeja Batik Motif Jlamprang dan Parang Tambal</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2194,12 +2507,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-5" data-name="Batik Cap Parang Kusumo" data-price="325000"
-              data-image="images/gallery-5.jpg">
-              <img src="images/gallery-5.jpg" alt="Batik Cap Parang Kusumo" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-5" data-name="Kemeja Batik Motif Pesisiran Semen Gelombang dan Ukel" data-price="135000"
+              data-image="images/Hijau1.jpg">
+              <img src="images/Hijau1.jpg" alt="Kemeja Batik Motif Pesisiran Semen Gelombang dan Ukel" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Cap Parang Kusumo</h4>
+                  <h4>Kemeja Batik Motif Pesisiran Semen Gelombang dan Ukel</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2214,12 +2527,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-6" data-name="Batik Modern Abstract" data-price="200000"
-              data-image="images/gallery-6.jpg">
-              <img src="images/gallery-6.jpg" alt="Batik Modern Abstract" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-6" data-name="Kemeja Batik Motif Daun Pakis" data-price="125000"
+              data-image="images/WhatsApp Image 2026-05-29 at 07.38.11 (1).jpeg">
+              <img src="images/WhatsApp Image 2026-05-29 at 07.38.11 (1).jpeg" alt="Kemeja Batik Motif Daun Pakis" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Modern Abstract</h4>
+                  <h4>Kemeja Batik Motif Daun Pakis</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2236,12 +2549,12 @@
             </div>
           </div>
           <div class="product-carousel-slide">
-            <div class="gallery-item fade-in" data-id="gal-7" data-name="Batik Tulis Cemukiran" data-price="475000"
-              data-image="images/gallery-7.jpg">
-              <img src="images/gallery-7.jpg" alt="Batik Tulis Cemukiran" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-7" data-name="Dress Batik Motif Semen dan Buketan" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.06.39.jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.06.39.jpeg" alt="Dress Motif Semen dan Buketan" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Tulis Cemukiran</h4>
+                  <h4>Dress Motif Semen dan Buketan</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2256,12 +2569,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-8" data-name="Batik Cap Sidoasih" data-price="285000"
-              data-image="images/gallery-8.jpg">
-              <img src="images/gallery-8.jpg" alt="Batik Cap Sidoasih" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-8" data-name="Dress Batik Motif Parang Rusak dan Parang Barong" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.06.39 (1).jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.06.39 (1).jpeg" alt="Dress Batik Motif Parang Rusak dan Parang Barong" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Cap Sidoasih</h4>
+                  <h4>Dress Batik Motif Parang Rusak dan Parang Barong</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2276,9 +2589,9 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-9" data-name="Batik Printing Geometri" data-price="165000"
-              data-image="images/gallery-9.jpg">
-              <img src="images/gallery-9.jpg" alt="Batik Printing Geometri" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-9" data-name="Dress Batik Motif Lidah Api dan Ukel" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.04.33.jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.04.33.jpeg" alt="Dress Batik Motif Lidah Api dan Ukel" loading="lazy">
               <div class="gallery-overlay">
                 <div>
                   <h4>Batik Printing Geometri</h4>
@@ -2298,12 +2611,12 @@
             </div>
           </div>
           <div class="product-carousel-slide">
-            <div class="gallery-item fade-in" data-id="gal-10" data-name="Batik Tulis Kawung" data-price="395000"
-              data-image="images/gallery-10.jpg">
-              <img src="images/gallery-10.jpg" alt="Batik Tulis Kawung" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-10" data-name="Dress Batik Motif Sawat" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.04.31.jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.04.31.jpeg" alt="Dress Batik Motif Sawat" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Tulis Kawung</h4>
+                  <h4>Dress Batik Motif Sawat</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2318,12 +2631,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-11" data-name="Batik Cap Semen Rante" data-price="315000"
-              data-image="images/gallery-11.jpg">
-              <img src="images/gallery-11.jpg" alt="Batik Cap Semen Rante" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-11" data-name="Dress Batik Motif Parang, Kawung, dan Pseudo Tenun" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.04.30.jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.04.30.jpeg" alt="Dress Batik Motif Parang, Kawung, dan Pseudo Tenun" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Batik Cap Semen Rante</h4>
+                  <h4>Dress Batik Motif Parang, Kawung, dan Pseudo Tenun</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2338,12 +2651,12 @@
                 </div>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-id="gal-12" data-name="Dress Batik Modern 3" data-price="205000"
-              data-image="images/gallery-12.jpg">
-              <img src="images/gallery-12.jpg" alt="Dress Batik Modern 3" loading="lazy">
+            <div class="gallery-item fade-in" data-id="gal-12" data-name="Dress Batik Motif Burung Phoenix dan Truntum" data-price="145000"
+              data-image="images/WhatsApp Image 2026-06-21 at 08.04.32.jpeg">
+              <img src="images/WhatsApp Image 2026-06-21 at 08.04.32.jpeg" alt="Dress Batik Motif Burung Phoenix dan Truntum" loading="lazy">
               <div class="gallery-overlay">
                 <div>
-                  <h4>Dress Batik Modern 3</h4>
+                  <h4>Dress Batik Motif Burung Phoenix dan Truntum</h4>
                   <div class="size-selector">
                     <select class="size-select">
                       <option value="S">S</option>
@@ -2381,29 +2694,29 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="avatar">
-                <img src="images/customer-1.jpg" alt="Sari Dewi" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-08 at 21.41.46.jpeg" alt="Mas Del" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
               <blockquote>"Batiknya berkualitas tinggi, bahan adem dan motifnya cantik. Pengiriman cepat! Sudah jadi
                 langganan saya."</blockquote>
-              <p class="name">— Sari Dewi</p>
+              <p class="name">— Mas Del</p>
             </div>
           </div>
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="avatar">
-                <img src="images/customer-2.jpg" alt="Budi Hartono" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-08 at 21.14.02.jpeg" alt="Alexsandro" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
               <blockquote>"Pertama kali beli batik online, tapi BATIK SURYA DEWI bikin percaya. Kualitasnya sesuai
                 ekspektasi, malah lebih!"</blockquote>
-              <p class="name">— Budi Hartono</p>
+              <p class="name">— Alexsandro</p>
             </div>
           </div>
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="avatar">
-                <img src="images/customer-3.jpg" alt="Ani Rahmawati" loading="lazy">
+                <img src="images/WhatsApp Image 2026-06-09 at 11.05.49.jpeg" alt="Ani Rahmawati" loading="lazy">
               </div>
               <div class="stars">★★★★★</div>
               <blockquote>"Pelayanan ramah, produk sesuai foto. Saya sudah repeat order 3 kali! Recommended banget buat
@@ -2442,7 +2755,7 @@
             <div class="icon">📍</div>
             <div class="detail">
               <h4>Alamat</h4>
-              <p>Bangunjiwo, Kec. Kasihan, Kab. Bantul<br>Daerah Istimewa Yogyakarta 55184</p>
+              <p>PETET, PRANGWEDANAN, Potorono, Kec. Banguntapan, Kabupaten Bantul<br>Daerah Istimewa Yogyakarta 55196</p>
             </div>
           </div>
 
@@ -2458,7 +2771,7 @@
             <div class="icon">✉️</div>
             <div class="detail">
               <h4>Email</h4>
-              <p>info@batiksuryadewi.com</p>
+              <p>batiksuryadewi.com</p>
             </div>
           </div>
 
@@ -2474,7 +2787,7 @@
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31629.11783490393!2d110.333614!3d-7.827779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b81d3%3A0x3027a76e352be30!2sBangunjiwo%2C%20Kasihan%2C%20Bantul%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              title="Peta Bangunjiwo"></iframe>
+              title="Peta Potorono"></iframe>
           </div>
         </div>
 
@@ -2550,6 +2863,25 @@
         <button type="submit" class="btn btn-wa">💬 Kirim ke WhatsApp</button>
       </div>
     </form>
+  </div>
+
+  <!-- ═══════════ QRIS PAYMENT MODAL ═══════════ -->
+  <div class="qris-modal" id="qrisModal">
+    <h3>Pembayaran QRIS</h3>
+    <p class="modal-subtitle">Scan QR code di bawah untuk melakukan pembayaran</p>
+    <div class="qris-wrapper">
+      <img src="images/qris.jpg" alt="QRIS Payment">
+    </div>
+    <div class="qris-total">
+      <span>Total Pembayaran</span>
+      <strong id="qrisTotal">Rp 0</strong>
+    </div>
+    <p class="qris-hint">Setelah pembayaran berhasil, klik tombol "Sudah Bayar" untuk mengirimkan konfirmasi pesanan via
+      WhatsApp</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-cancel" id="qrisCancel">Batal</button>
+      <button type="button" class="btn btn-wa" id="qrisConfirm">✅ Sudah Bayar</button>
+    </div>
   </div>
 
   <!-- ═══════════ SIZE ANALYZER MODAL ═══════════ -->
@@ -2665,7 +2997,7 @@
     });
 
     function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 5000);
+      autoSlideInterval = setInterval(nextSlide, 100000);
     }
 
     function resetAutoSlide() {
@@ -2762,6 +3094,10 @@
     const sizeResultValue = document.getElementById('sizeResultValue');
     const sizeResultDesc = document.getElementById('sizeResultDesc');
     const sizeModalCancel = document.getElementById('sizeModalCancel');
+    const qrisModal = document.getElementById('qrisModal');
+    const qrisTotal = document.getElementById('qrisTotal');
+    const qrisCancel = document.getElementById('qrisCancel');
+    const qrisConfirm = document.getElementById('qrisConfirm');
 
     // ─── Cart Functions ───
     function addToCart(id, name, price, image, size) {
@@ -2879,7 +3215,21 @@
 
     function closeCheckoutModal() {
       checkoutModal.classList.remove('open');
-      if (!cartSidebar.classList.contains('open')) {
+      if (!cartSidebar.classList.contains('open') && !qrisModal.classList.contains('open')) {
+        overlay.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      }
+    }
+
+    function openQrisModal() {
+      qrisModal.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeQrisModal() {
+      qrisModal.classList.remove('open');
+      if (!cartSidebar.classList.contains('open') && !checkoutModal.classList.contains('open')) {
         overlay.classList.remove('open');
         document.body.classList.remove('no-scroll');
       }
@@ -2919,6 +3269,7 @@
       closeCart();
       closeCheckoutModal();
       closeSizeModal();
+      closeQrisModal();
     });
 
     // ─── Checkout ───
@@ -2929,6 +3280,8 @@
     });
 
     modalCancel.addEventListener('click', closeCheckoutModal);
+
+    var checkoutData = null;
 
     checkoutForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -2942,25 +3295,41 @@
         return;
       }
 
-      var msg = '*Pesanan BATIK SURYA DEWI*\n\n';
+      checkoutData = { name: name, phone: phone, address: address, notes: notes };
+      qrisTotal.textContent = formatPrice(getTotal());
+      closeCheckoutModal();
+      setTimeout(openQrisModal, 350);
+    });
+
+    qrisCancel.addEventListener('click', function () {
+      closeQrisModal();
+      setTimeout(openCheckoutModal, 350);
+    });
+
+    qrisConfirm.addEventListener('click', function () {
+      if (!checkoutData) return;
+
+      var msg = '✓ *Pembayaran QRIS*\n\n';
+      msg += '*Pesanan BATIK SURYA DEWI*\n\n';
       msg += '*Item Pesanan:*\n';
       cart.forEach(function (item) {
         msg += item.name + ' (' + item.size + ') - ' + item.qty + 'x = ' + formatPrice(item.price * item.qty) + '\n';
       });
       msg += '\n*Total: ' + formatPrice(getTotal()) + '*\n\n';
       msg += '*Data Pemesan:*\n';
-      msg += 'Nama: ' + name + '\n';
-      msg += 'No. Telp: ' + phone + '\n';
-      msg += 'Alamat: ' + address + '\n';
-      if (notes) msg += 'Catatan: ' + notes + '\n';
+      msg += 'Nama: ' + checkoutData.name + '\n';
+      msg += 'No. Telp: ' + checkoutData.phone + '\n';
+      msg += 'Alamat: ' + checkoutData.address + '\n';
+      if (checkoutData.notes) msg += 'Catatan: ' + checkoutData.notes + '\n';
 
       var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
       window.open(url, '_blank');
 
       cart = [];
       renderCart();
-      closeCheckoutModal();
+      closeQrisModal();
       checkoutForm.reset();
+      checkoutData = null;
       showToast('Pesanan dikirim! Kami akan menghubungi Anda');
     });
 
@@ -3108,7 +3477,7 @@
       prevBtn.addEventListener('click', function () { prevSlide(); resetAuto(); });
       nextBtn.addEventListener('click', function () { nextSlide(); resetAuto(); });
 
-      function startAuto() { interval = setInterval(nextSlide, 4000); }
+      function startAuto() { interval = setInterval(nextSlide, 100000); }
       function resetAuto() { clearInterval(interval); startAuto(); }
 
       wrapper.addEventListener('mouseenter', function () { clearInterval(interval); });
@@ -3119,6 +3488,7 @@
 
     initProductCarousel('newArrivals');
     initProductCarousel('gallery');
+    initProductCarousel('wanita');
   </script>
 
 </body>
